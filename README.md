@@ -11,7 +11,7 @@
 
 ### 项目中所用到的模块（pip install 库名）：
 
-- **selenium**：
+- **selenium**：与浏览器进行交互，web框架所需库
 - **PyYAML**：YAML配置文件所需库
 - **openpyxl**：操作excel所需库
 - **pytest**：Pytest测试框架所需库

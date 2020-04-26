@@ -1,0 +1,50 @@
+test_login_error:
+  - # 添加减号可以把用例转为list，每一部分是一个字典
+    case_id: 1
+    title: 不输入直接登录
+    data:  # 存放多层嵌套字典的方式
+      username: ''
+      pwd: ''
+    expect: 请输入5到32位的数字和字母
+
+  - case_id: 2
+    title: 不输入账号登录
+    data:
+      username: ''
+      pwd: 123456
+    expect: 请输入5到32位的数字和字母
+
+  - case_id: 3
+    title: 不输入密码登录
+    data:
+      username: adncbd
+      pwd: ''
+    expect: 密码至少位5位
+
+  - case_id: 4
+    title: 输入账号少于5位
+    data:
+      username: adbc
+      pwd: 123456
+    expect: 请输入5到32位的数字和字母
+
+  - case_id: 5
+    title: 输入账号多于32位
+    data:
+      username: aszxcdweq12345432lkhuwyehdg345687
+      pwd: 123456
+    expect: 请输入5到32位的数字和字母
+
+  - case_id: 6
+    title: 输入密码少于5位
+    data:
+      username: admin
+      pwd: 1234
+    expect: 密码至少位5位
+
+  - case_id: 7
+    title: 输入账号包含特殊符号
+    data:
+      username: adki%@@
+      pwd: 123456
+    expect: 请输入5到32位的数字和字母
